@@ -19,7 +19,7 @@ async function startServer() {
   if (isProduction) {
     app.use(express.static(`${root}/dist/client`, { index: false }))
   } else {
-    // Set  Vite server up as middleware and configure HMR to use
+    // Set Vite server up as middleware and configure HMR to use
     // same development-time certificate as used by @small-tech/https.
     const certificateDirectory = path.join(os.homedir(), '.small-tech.org', 'https', 'local')
     const cert = fs.readFileSync(path.join(certificateDirectory, 'localhost.pem'), 'utf-8')
